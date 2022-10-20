@@ -1,0 +1,298 @@
+:root {
+    --nav-color: #2b2d42;
+    --about-color: #343f4f;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+nav ul {
+    background-color: var(--nav-color);
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    align-items: center;
+    text-align: end;
+    z-index: 1;
+}
+
+
+nav li {
+    display: inline-block;
+    align-items: center;
+    list-style: none;
+    justify-content: space-between;
+    padding: 1vw 6vw;
+}
+
+nav a{
+    font-size: 1.5rem;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: aqua;
+}
+
+/* about section starts */
+
+#about {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    background-color: var(--about-color);
+    color: white;
+    justify-content: center;
+    line-height: 1.4em;
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+}
+
+.linkdin-acc a{
+    color: #fc6d6d;
+    text-decoration: none;
+}
+
+.linkdin-acc a:hover {
+    color: white;
+}
+
+.wrapper {
+    display: inline-flex;
+}
+
+.wrapper .dynamic-txt {
+    margin-left: 15px;
+    top: 0;
+    height: 1.5em;
+    line-height: 1.5em;
+    overflow: hidden;
+}
+
+.wrapper .dynamic-txt li{
+    list-style: none;
+    color: #fc6d6d;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    animation: slide 12s steps(3) infinite;
+}
+
+@keyframes slide {
+    100%{
+        top: -4.5em;
+    }
+}
+
+.wrapper .dynamic-txt li span{
+    position: relative;
+}
+
+.wrapper .dynamic-txt li span::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 115%;
+    width: 100%;
+    background-color: var(--about-color);
+    border-left: 2px solid #fc6d6d;
+    animation: typing 2s steps(20) alternate infinite;
+}
+
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 2px 35px;
+    }
+}
+
+/* about section ends */
+
+/* work section starts */
+
+#work {
+    position: relative;
+    width: 100%;
+}
+
+#work .blank{
+    height: 10vh;
+}
+
+#work h1 {
+    display: flex;
+    top: 10vh;
+    width: 100%;
+    height: 90px;
+    text-decoration: underline #3535ad;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 2rem;
+    justify-content: center;
+}
+
+#work .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 70px auto 0;
+    gap: 20px;
+}
+.project{
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px #585656;
+    /* border: 2px solid red; */
+    width: 300px;
+    height: 350px;
+}
+
+.project:hover{
+    box-shadow: 5px 5px 20px #7e7c78;
+}
+
+.project img{
+    width: 300px;
+    height: 200px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.project img:hover {
+    transform: scale(1.03);
+    transition: .5s all ease;
+}
+
+.project h2,p,a{
+    box-sizing: border-box;
+    padding: 5px 20px;
+    text-align: center;
+}
+
+.project a{
+    color: blue;
+    text-decoration: none;
+}
+
+.project a:hover{
+    color: red;
+}
+
+#work .button{
+    display: flex;
+    margin: 20px auto;
+    padding: 5px;
+    width: 120px;
+    background-color: #3a9fc1;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#work .button a{
+    color: whitesmoke;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+#work .button a:hover{
+    color: blue;
+}
+/* work section ends */
+
+/* contact section starts */
+
+#contact{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    border: none;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0fb2a2;
+    line-height: 80px;
+    font-family: sans-serif;
+}
+
+#contact h1{
+    font-size: 4rem;
+    margin-top: 10vh;
+}
+
+#contact p{
+    font-size: 1.5rem;
+}
+
+#contact a{
+    display: inline-block;
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: poppins, sans-serif;
+    text-align: center;
+    justify-content: center;
+}
+
+#contact a:hover{
+    transform: scale(1.1);
+    transition: transform .5s ease-out;
+}
+
+
+/* contact section ends */
+
+footer{
+    position: absolute;
+    background-color: #0fb2a2;
+    width: 100vw;
+}
+
+footer p{
+    text-align: end;
+}
+
+
+
+
+@media only screen and (max-width: 500px) {
+
+    nav li{
+        padding: 2vh 3vw;
+    }
+
+    nav a{
+        font-size: 1rem;
+    }
+
+    #about {
+        font-size: 1rem;
+    }
+
+    #work h1{
+        font-size: 1.4rem;
+    }
+
+    #contact h1{
+        font-size: 1.3rem;
+    }
+
+    #contact p{
+        font-size: 1rem;
+    }
+
+    #contact a{
+        padding: 10px;
+    }
+}
